@@ -1,0 +1,129 @@
+<div class="home-page-wrapper">
+        <div class="container">
+           <div class="search-header">
+              <h3> Search @ Twitter</h3>
+           </div>
+           <!-- search -->
+           <div class="twitter-search-component">
+              <div class="twitter-search-box">
+                 <form>
+                    <input name="search" id="searchText" class="searchText" type="text" value="" placeholder="Search" [(ngModel)]="query"/>
+                    <input type="button" value="Search" class="searchData" />
+                 </form>
+              </div>
+              <div class="twitter-search-results">
+                 <div id="seasons">
+                    <div *ngIf="undefined === restItems">Loading..........</div>
+                    <div *ngIf="undefined != restItems">
+                       <div *ngFor="let myPost of restItems['statuses'] | search: query" class="wrap">
+                          <div class="image-container">
+                             <div class="image-wrap">
+                                <img [src]="myPost.user.profile_image_url">
+                             </div>
+                             <div class="name-date-wrap">
+                                <div>  {{ myPost.user.name }} </div>
+                                <div>  {{ myPost.user.created_at }} </div>
+                                <div>  {{ myPost.text }} </div>
+                             </div>
+                          </div>
+                       </div>
+                       <!-- <ul *ngFor="let myPost of restItems['statuses']">
+                          <li> 
+                              <img [src]="myPost.user.profile_image_url">
+                          </li>
+                          <li> name : {{ myPost.user.name }} </li>
+                          <li> created_at : {{ myPost.user.created_at }} </li>
+                          <li> text : {{ myPost.text }} </li>
+                          </ul> -->
+                    </div>
+                 </div>
+              </div>
+           </div>
+           <!-- Search -->
+        </div>
+     </div>
+     <!-- restItems -->
+     <!--
+        <div *ngIf="undefined === restItems">Loading..........</div>
+        
+        <div *ngIf="undefined != restItems">
+            <ul *ngFor="let myPost of restItems['statuses']">
+                     profile_image_url : {{ myPost.user.profile_image_url }}
+                <li> 
+                        <img [src]="myPost.user.profile_image_url">
+                     <img id="myImg" [src]="myPost.user.profile_image_url" alt="Attached file" style="width: 100%"> 
+                </li>
+                <li> name : {{ myPost.user.name }} </li>
+                <li> created_at : {{ myPost.user.created_at }} </li>
+                <li> text : {{ myPost.text }} </li>
+            </ul>
+        </div>
+        -->
+     <!-- <div *ngIf="undefined === restItems">Loading..........</div>
+        <div *ngIf="undefined != restItems">
+                <div *ngFor="let myPost of restItems['statuses']" class="wrap">
+                        <div class="image-container">
+                            <img [src]="myPost.user.profile_image_url">
+        
+                            <div class="name-date-wrap">
+                                <div> name : {{ myPost.user.name }} </div>
+                                <div> created_at : {{ myPost.user.created_at }} </div>
+                            </div>
+                            <div> text : {{ myPost.text }} </div>
+                        </div>
+                </div>
+            <ul *ngFor="let myPost of restItems['statuses']">
+                <li> 
+                    <img [src]="myPost.user.profile_image_url">
+                </li>
+                <li> name : {{ myPost.user.name }} </li>
+                <li> created_at : {{ myPost.user.created_at }} </li>
+                <li> text : {{ myPost.text }} </li>
+            </ul> 
+        </div> -->
+     <!-- <div *ngIf="undefined === restItems">Loading..........</div>
+        <div *ngIf="undefined != restItems">
+            <ul><li *ngFor="let myPost of restItems['posts']" [innerHTML]="myPost.title" ></li></ul>
+            <ul><li *ngFor="let myPost of restItems['posts']" [innerHTML]="myPost.site_ID" ></li></ul>
+            <ul><li *ngFor="let myPost of restItems['posts']" [innerHTML]="myPost.ID" ></li></ul>
+            <ul><li *ngFor="let myPost of restItems['posts']" [innerHTML]="myPost.URL" ></li></ul>
+            <ul><li *ngFor="let myPost of restItems['posts']" [innerHTML]="myPost.attachment_count" ></li></ul>
+            <ul><li *ngFor="let myPost of restItems['posts']" [innerHTML]="myPost.content" ></li></ul>
+            <ul><li *ngFor="let myPost of restItems['posts']" [innerHTML]="myPost.date" ></li></ul>
+            <ul><li *ngFor="let myPost of restItems['posts']" [innerHTML]="myPost.excerpt" ></li></ul>
+            <ul><li *ngFor="let myPost of restItems['posts']" [innerHTML]="myPost.format" ></li></ul>
+            <ul><li *ngFor="let myPost of restItems['posts']" [innerHTML]="myPost.global_ID" ></li></ul>
+            <ul><li *ngFor="let myPost of restItems['posts']" [innerHTML]="myPost.guid" ></li></ul>
+            <ul><li *ngFor="let myPost of restItems['posts']" [innerHTML]="myPost.modified" ></li></ul>
+            <ul><li *ngFor="let myPost of restItems['posts']" [innerHTML]="myPost.short_URL" ></li></ul>
+            <ul><li *ngFor="let myPost of restItems['posts']" [innerHTML]="myPost.site_ID" ></li></ul>
+            <ul><li *ngFor="let myPost of restItems['posts']" [innerHTML]="myPost.slug" ></li></ul>
+            <ul><li *ngFor="let myPost of restItems['posts']" [innerHTML]="myPost.status" ></li></ul>
+            <ul><li *ngFor="let myPost of restItems['posts']" [innerHTML]="myPost.like_count" ></li></ul>
+            <ul><li *ngFor="let myPost of restItems['posts']" [innerHTML]="myPost.menu_order" ></li></ul>
+        
+        </div> -->
+     <!-- <div *ngIf="undefined != restItems">
+        <ul *ngFor="let myPost of restItems['posts']" >
+            <li> {{ myPost.title }}</li>
+            <li> {{ myPost.ID }}</li>
+            <li> {{ myPost.site_ID }}</li>
+            <li> {{ myPost.URL }}</li>
+            <li> {{ myPost.attachment_count }}</li>
+            <li> {{ myPost.content }}</li>
+            <li> {{ myPost.date }}</li>
+            <li> {{ myPost.excerpt }}</li>
+            <li> {{ myPost.format }}</li>
+            <li> {{ myPost.global_ID }}</li>
+            <li> {{ myPost.guid }}</li>
+            <li> {{ myPost.modified }}</li>
+            <li> {{ myPost.short_URL }}</li>
+            <li> {{ myPost.site_ID }}</li>
+            <li> {{ myPost.slug }}</li>
+            <li> {{ myPost.status }}</li>
+            <li> {{ myPost.like_count }}</li>
+            <li> {{ myPost.menu_order }}</li>
+        </ul>
+        
+        
+        </div> -->

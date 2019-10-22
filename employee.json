@@ -1,0 +1,25 @@
+{
+   "employees":[
+      {
+         "id":1,
+         "firstname":"Santhosh",
+         "lastname":"BG",
+         "email":"santhosh@gmail.com",
+         "department":"Web"
+      },
+      {
+         "id":2,
+         "firstname":"Jaga",
+         "lastname":"S",
+         "email":"jaga@gmail.com",
+         "department":"DB"
+      },
+      {
+         "id":3,
+         "firstname":"Ram",
+         "lastname":"S S",
+         "email":"ram@gmail.com",
+         "department":"Web"
+      }
+   ]
+}

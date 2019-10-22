@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+    import { from } from 'rxjs';
+import {MenuComponent} from './menu/menu.component';
+import {HeaderComponent} from './header/header.component';
 
 const routes: Routes = [
-    // { path: 'login', component: LoginComponent },
-    // { path: 'add-user', component: AddUserComponent },
+    {path: '', redirectTo: 'home', pathMatch: 'full'},
+    { path: 'twittersearch', component: HeaderComponent },
+    { path: 'menus', component: MenuComponent },
     // { path: 'list-user', component: ListUserComponent },
     // { path: 'edit-user', component: EditUserComponent },
     // { path: '', component: LoginComponent }
